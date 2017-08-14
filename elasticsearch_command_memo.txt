@@ -1,0 +1,27 @@
+◆Index登録
+curl -XPUT 'localhost:9200/oplan?pretty'
+
+◆Index削除
+curl -XDELETE 'localhost:9200/oplan?pretty'
+
+◆Index確認
+curl -XGET localhost:9200/_aliases
+
+◆データ登録
+curl -XPUT localhost:9200/oplan/member/1?pretty -d '
+{
+  "name" : "Ohara Bunka",
+  "affiliation" : "CEO"
+}'
+
+◆データ取得
+curl -XGET 'http://localhost:9200/oplan/member/1?pretty=true'
+
+◆データ検索
+curl -XGET http://localhost:9200/oplan/member/_search -d'
+{
+  "query":
+    {
+      "match":{"affiliation" : "CEO"}
+    }
+}'
