@@ -7,3 +7,15 @@ services:
             - ./myapp:/go/src/myapp
         ports:
             - 9000:9000
+        links:
+            - elastic
+
+    elastic:
+        image: docker.elastic.co/elasticsearch/elasticsearch:5.1.1
+        container_name: sample_elastic
+        volumes:
+            - ./esdata:/usr/share/elasticsearch-5.1.1/data
+            - ./script/elasticsearch.yml:/usr/share/elasticsearch-5.1.1/config/elasticsearch.yml
+            - ./script/log4j2.properties:/usr/share/elasticsearch-5.1.1/config/log4j2.properties
+        ports:
+            - 9200:9200
