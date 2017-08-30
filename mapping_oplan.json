@@ -1,0 +1,30 @@
+{
+  "member" : {
+    "properties" : {
+      "Number" : {
+        "type" : "long"
+      },
+      "Name" : {
+        "type" : "string"
+      },
+      "Affiliation" : {
+        "type" : "string"
+      },
+      "Position" : {
+        "type" : "string"
+      },
+      "MailAddress" : {
+        "type" : "string"
+      },
+      "PhoneNumber" : {
+        "type" : "string"
+      },
+      "EntryMonth" : {
+        "type" : "string"
+      },
+      "Birthday" : {
+        "type" : "string"
+      }
+    }
+  }
+}
