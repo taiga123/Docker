@@ -4,6 +4,8 @@ ENV GOPATH $GOPATH:/go/src
 
 RUN apt-get update && \
     apt-get upgrade -y
+    
+RUN go get gopkg.in/olivere/elastic.v5
 
 # install revel and revel-cli
 RUN go get github.com/revel/revel && \
